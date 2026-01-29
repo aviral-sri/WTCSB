@@ -35,3 +35,24 @@ function person2() {
 
 person2();
 // this will run bec of arrow function take this.age from parent function
+
+
+const aa =() => {return {user: "name"}};
+console.log(aa());
+
+const bb = () => [1,2,3];
+console.log(bb());
+
+
+const user ={
+  name: "av", age: 19,
+  welcome: () => {
+    console.log(`hello ${this.name}`);
+    console.log(this); //shows that this is not in arrow fn, and there is no this in parent, so empty, using normal fucntion will have this
+  }
+};
+
+user.welcome();
+user.name = 'ajay';
+user.welcome();
+
